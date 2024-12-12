@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#red").animate({
+                    right:'+=50px',
+                    height:'+=150'
+
+                });
+
+                $("#blue").animate({
+                    right:'+=100px',
+                    height:'+=50'
+
+                });
+
+                $("#white").animate({
+                    right:'+=5000px',
+                    height:'+=40'
+
+                });
+
+                $("#red1").animate({
+                    right:'+=50px',
+                    height:'+=150'
+
+                });
+
+                $("#black").animate({
+                    right:'+=5000px',
+                    height:'+=40'
+
+                });
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+<button>Click here 3 times to make a weird looking American flag</button>
+<div id="red" style="height:300px; width:5000px; background-color: red;position: absolute">
+<div id="blue" style="height:80px; width:1000px; background-color: blue;position: absolute">
+<div id="white" style="height:300px; width:5000px; background-color: white;position: absolute">
+<div id="red1" style="height:300px; width:5000px; background-color: red;position: absolute">
+<div id="black" style="height:5000px; width:5000px; background-color: black;position: absolute">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
