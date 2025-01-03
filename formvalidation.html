@@ -10,25 +10,39 @@
         if($("#fname").val().length === 0){
           $("#fname").css({"background-color" : "red"})
           $("#fnameE").css({"display":"block"})
-        }
-        if($("#lname").val().length === 0){
-          $("#lname").css({"background-color" : "red"})
-          $("#lnameE").css({"display":"block"})
-        }
-        if($("#street2").val().length === 0){
-          $("#street2").css({"background-color" : "red"})
-          $("#address2E").css({"display":"block"})
-        }
-        if($("#city").val().length === 0){
-          $("#city").css({"background-color" : "red"})
-          $("#cityE").css({"display":"block"})
-        }
-        if($("#zip").val().length === 0){
-          $("#zip").css({"background-color" : "red"})
-          $("#zipE").css({"display":"block"})
+
+          if($("#lname").val().length === 0){
+            $("#lname").css({"background-color" : "red"})
+            $("#lnameE").css({"display":"block"})
+
+            if($("#street2").val().length === 0){
+              $("#street2").css({"background-color" : "red"})
+              $("#address2E").css({"display":"block"})
+
+              if($("#city").val().length === 0){
+                $("#city").css({"background-color" : "red"})
+                $("#cityE").css({"display":"block"})
+
+                if($("#zip").val().length === 0){
+                  $("#zip").css({"background-color" : "red"})
+                  $("#zipE").css({"display":"block"})
+                }
+              }
+            }
+          }
         }
 
 
+        var phone_filter = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
+        if(!phone_filter.test($("#phone").val())){
+          $("#phone").css({"background-color" : "red"})
+          $("#phoneE").css({"display":"block"})
+        }
+
+        email_filter = /^[a-zA-Z0–9. _%+-]+@[a-zA-Z0–9. -]+\. [a-zA-Z]{2,}$/
+        if(!email_filter.test($("#email").val()))
+          $("#email").css({"background-color" : "red"})
+        $("#email").css({"display":"block"})
 
 
       });
@@ -114,8 +128,10 @@
   <input type="text" name="dob" id="dob" /><br />
   <label for="phone">Phone Number</label>
   <input type="text" name="phone" id="phone" /><br />
+  <div id="phoneE" style="display: block">Please enter your phone number.</div>
   <label for="email">Email</label>
   <input type="text" name="email" id="email" /><br />
+  <div id="email" style="display: block">Please enter a valid email.</div>
   <label for="username">Username</label>
   <input type="text" name="username" id="username" /><br />
   <label for="password">Password</label>
