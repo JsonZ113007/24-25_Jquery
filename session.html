@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session Examples</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        // Adding/Changing a value in the Session
+        // Uses a key-value pair
+        // .set("key","value")
+       sessionStorage.setItem("name", "Jason");
+       updateInputs();
+
+       $("input#name").val(sessionStorage.getItem("name"));
+      });
+
+      function updateInputs(){
+        $("input#output").val(sessionStorage.getItem("name"));
+        $("input#storage").val(sessionStorage.length);
+      }
+
+      function updateName(){
+        sessionStorage.setItem("name", "New Name");
+        updateInputs();
+      }
+
+      function clearSession(){
+        sessionStorage.clear();
+      updateInputs();
+      }
+    </script>
+
+</head>
+<body>
+<input type="text" id="output" name="test"/>
+<button onclick="updateName()" >Change Name</button>
+<button onclick="clearSession()">Clear</button> <br/>
+<input type="text" id="storage">
+
+
+</body>
+</html>
