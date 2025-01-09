@@ -6,5 +6,3 @@
    function updateTotal(){
         $("inpt#total").val(sessionStorage.getItem("price"));
     }
-
-});
